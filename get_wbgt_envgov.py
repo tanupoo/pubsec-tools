@@ -84,6 +84,8 @@ def get_html_wbgt_envgojp(query, date_str=None, debug=False):
         date_str = date.today().strftime("%Y%m%d")
     url = "http://www.wbgt.env.go.jp/day_list.php?{}&day={}".format(query,
                                                                     date_str)
+    if debug:
+        print("URL: {}".format(url))
 
     try:
         ret = requests.get(url, verify=False)
